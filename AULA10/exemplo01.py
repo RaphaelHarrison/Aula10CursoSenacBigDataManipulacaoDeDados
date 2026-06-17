@@ -249,6 +249,18 @@ try:
     
     plt.hist(array_roubo_veiculo, bins=198)
     
+    contagens, limites = np.histogram(array_roubo_veiculo, bins=198)
+    
+    print("\nFaixas do Histogram")
+    for i in range(len(contagens)):
+        if contagens[i] > 0:
+            print(
+                f"Faixa {i+1}: "
+                f"{limites[i]:.0f} até {limites[i+1]} roubos:"
+                f"=> {contagens[i]} municípios"
+            )
+        
+    
    
     # Posição 3 - Boxplot
     plt.subplot(2, 2, 3) 
